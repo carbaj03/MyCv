@@ -6,6 +6,7 @@ import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
 import com.acv.mycv.ui.profile.ProfileFragment
 import com.acv.mycv.ui.skills.SkillsFragment
+import com.acv.mycv.ui.works.WorksFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 when (it.itemId) {
                     PROFILE -> Action { load<ProfileFragment>() }
                     SKILLS -> Action { load<SkillsFragment>() }
-                    WORKS -> Action { }
+                    WORKS -> Action { load<WorksFragment>() }
                     STUDIES -> Action { }
                     OTHERS -> Action { }
                 }

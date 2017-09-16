@@ -8,6 +8,7 @@ import com.acv.mycv.R
 import com.acv.mycv.ui.common.BaseFragment
 import com.acv.mycv.ui.common.loadCircle
 import com.acv.mycv.ui.web.WebViewActivity
+import kotlinx.android.synthetic.main.collapsing_toolbar.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 
@@ -16,13 +17,15 @@ class ProfileFragment : BaseFragment() {
     override fun getLayout() = R.layout.fragment_profile
 
     override fun onCreate() {
-
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar!!.apply {
-//            setDisplayShowTitleEnabled(true)
-            setDisplayHomeAsUpEnabled(true)
-            title = "Android Developer"
+        with(activity as AppCompatActivity) {
+            setSupportActionBar(toolbar)
+            supportActionBar!!.apply {
+                setDisplayShowTitleEnabled(true)
+                setDisplayHomeAsUpEnabled(true)
+                title = "Android Developer"
+            }
         }
+
 
         ivProfile.loadCircle(R.drawable.profile)
         btnEmail.setOnClickListener {
