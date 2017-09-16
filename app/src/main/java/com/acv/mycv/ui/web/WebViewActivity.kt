@@ -27,9 +27,6 @@ class WebViewActivity : AppCompatActivity() {
         }
 
         ivLoading.show()
-
-
-
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
