@@ -30,6 +30,7 @@ dependencies {
     implementation rootProject.ext.dependencies.appCompatv7
     implementation rootProject.ext.dependencies.design
     implementation rootProject.ext.dependencies.recyclerView
+    implementation rootProject.ext.dependencies.cardView
     implementation rootProject.ext.dependencies.design
     implementation rootProject.ext.dependencies.vector
     implementation rootProject.ext.dependencies.glide

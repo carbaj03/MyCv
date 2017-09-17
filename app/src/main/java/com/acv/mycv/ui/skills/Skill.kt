@@ -1,6 +1,11 @@
 package com.acv.mycv.ui.skills
 
+import com.acv.mycv.R
+import com.acv.mycv.ui.common.ItemVisitable
 
-data class Skill(
+
+data class Skill (
         val name: String
-)
+) : ItemVisitable {
+    override fun type() = R.layout.item_skill
+}

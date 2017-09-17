@@ -24,12 +24,11 @@ class SkillsFragment : BaseFragment() {
         with(rvSkills) {
             layoutManager = linearLayoutManager()
             addItemDecoration(DividerDecorationK(context.color(R.color.primary), 1f))
-            adapter = SkillAdapter(getItems(), ::SkillViewHolder, getItemLayout()) { listener(it) }
+            adapter = SkillAdapter(getItems(), ::SkillViewHolder) { listener(it) }
         }
     }
 
     fun listener(it: Skill) = coordinator.snackBar(it.name)
-    fun getItemLayout() = { R.layout.item_skill }
     fun getItems() = listOf(
             Skill("Librerias"),
             Skill("Solid"),

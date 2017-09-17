@@ -8,84 +8,115 @@
 
     <include layout="@layout/collapsing_toolbar" />
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/data"
+        <TextView
+            android:id="@+id/tvName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="75dp">
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lobster_two"
+            android:gravity="center"
+            android:text="Alejandro Carbajo Vidales"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lobster_two"
-                android:gravity="center"
-                android:text="Alejandro Carbajo Vidales"
-                android:textSize="28sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Madrid, Madrid"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-            <TextView
-                android:id="@+id/tvLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Madrid, Madrid"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="28 años"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
-            <TextView
-                android:id="@+id/tvAge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="28 años"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+        <TextView
+            android:id="@+id/btnPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_phone"
+            android:padding="8dp"
+            android:text="699 79 09 97"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
-            <ImageButton
-                android:id="@+id/btnPhone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tvAge"
-                app:srcCompat="@drawable/ic_phone" />
+        <TextView
+            android:id="@+id/btnEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_email"
+            android:padding="8dp"
+            android:text="carbaj03@gmail.com"
+            app:layout_constraintEnd_toEndOf="@+id/tvAge"
+            app:layout_constraintStart_toStartOf="@+id/tvAge"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
-            <ImageButton
-                android:id="@+id/btnEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/tvAge"
-                app:layout_constraintStart_toStartOf="@+id/tvAge"
-                app:layout_constraintTop_toBottomOf="@+id/tvAge"
-                app:srcCompat="@drawable/ic_email" />
+        <TextView
+            android:id="@+id/btnWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_web"
+            android:padding="8dp"
+            android:text="alejandrocarbajo.com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
-            <ImageButton
-                android:id="@+id/btnWeb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvAge"
-                app:srcCompat="@drawable/ic_web" />
+        <ImageButton
+            android:id="@+id/btnGitHub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ripple_effect"
+            app:layout_constraintEnd_toEndOf="@+id/btnEmail"
+            app:layout_constraintStart_toStartOf="@+id/btnEmail"
+            app:layout_constraintTop_toBottomOf="@+id/btnEmail"
+            app:srcCompat="@drawable/ic_github" />
 
+        <TextView
+            android:id="@+id/tvAwesome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lobster_two"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="'Elige un trabajo que te guste y no tendrás que trabajar ni un día de tu vida.'"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/btnGitHub" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.constraint.ConstraintLayout>
 
     <ImageView
         android:id="@+id/ivProfile"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
         android:scaleType="centerCrop"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom|center"
         tools:src="@drawable/profile" />
+
 
 </android.support.design.widget.CoordinatorLayout>

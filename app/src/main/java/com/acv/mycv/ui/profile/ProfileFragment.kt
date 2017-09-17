@@ -3,6 +3,8 @@ package com.acv.mycv.ui.profile
 import android.content.Intent
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.BaseFragment
@@ -11,9 +13,7 @@ import com.acv.mycv.ui.web.WebViewActivity
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
-
 class ProfileFragment : BaseFragment() {
-
     override fun getLayout() = R.layout.fragment_profile
 
     override fun onCreate() {
@@ -28,6 +28,7 @@ class ProfileFragment : BaseFragment() {
 
 
         ivProfile.loadCircle(R.drawable.profile)
+
         btnEmail.setOnClickListener {
             with(Intent(Intent.ACTION_SEND)) {
                 data = Uri.parse("mailto:")
@@ -54,5 +55,6 @@ class ProfileFragment : BaseFragment() {
         btnWeb.setOnClickListener {
             startActivity(Intent(activity, WebViewActivity::class.java))
         }
+
     }
 }

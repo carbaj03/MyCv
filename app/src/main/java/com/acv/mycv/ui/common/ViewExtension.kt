@@ -1,6 +1,5 @@
 package com.acv.mycv.ui.common
 
-import android.app.Activity
 import android.support.design.widget.Snackbar
 import android.view.LayoutInflater
 import android.view.View
@@ -21,17 +20,22 @@ fun Action(f: () -> Unit): Boolean {
     return true
 }
 
-fun View.snackBar(value: Any) = when(value){
+fun View.snackBar(value: Any) = when (value) {
     is Int -> Snackbar.make(this, value, Snackbar.LENGTH_SHORT).show()
     is String -> Snackbar.make(this, value, Snackbar.LENGTH_SHORT).show()
     else -> Snackbar.make(this, "Error", Snackbar.LENGTH_SHORT).show()
 }
 
-fun View.hide()  { visibility = View.GONE }
-fun View.show()  { visibility = View.VISIBLE}
+fun View.hide() {
+    visibility = View.GONE
+}
+
+fun View.show() {
+    visibility = View.VISIBLE
+}
 
 fun View.toggleVisivility() =
-        when(visibility){
+        when (visibility) {
             View.VISIBLE -> visibility = View.GONE
             View.INVISIBLE -> visibility = View.VISIBLE
             View.GONE -> visibility = View.VISIBLE
