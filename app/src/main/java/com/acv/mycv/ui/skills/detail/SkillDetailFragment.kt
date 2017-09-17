@@ -1,15 +1,18 @@
-package com.acv.mycv.ui.skills
+
+package com.acv.mycv.ui.skills.detail
 
 import android.support.v7.app.AppCompatActivity
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
+import com.acv.mycv.ui.skills.Skill
+import com.acv.mycv.ui.skills.SkillViewHolder
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 import kotlinx.android.synthetic.main.fragment_skills.*
 
 
-class SkillsFragment : BaseFragment() {
-
-    override fun getLayout() = R.layout.fragment_skills
+class SkillDetailFragment : BaseFragment() {
+    override fun getLayout() =
+            R.layout.fragment_skills
 
     override fun onCreate() {
         with(activity as AppCompatActivity) {

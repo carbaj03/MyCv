@@ -1,18 +1,24 @@
 package com.acv.mycv.ui.common
 
 import android.support.design.widget.Snackbar
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions.circleCropTransform
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions.bitmapTransform
 
 
 fun ImageView.loadCircle(toLoad: Any) =
         Glide.with(context)
                 .load(toLoad)
-                .apply(circleCropTransform())
+                .apply(bitmapTransform(MultiTransformation(CircleCrop(), CenterCrop())))
                 .into(this)
 
 fun Action(f: () -> Unit): Boolean {
@@ -26,13 +32,15 @@ fun View.snackBar(value: Any) = when (value) {
     else -> Snackbar.make(this, "Error", Snackbar.LENGTH_SHORT).show()
 }
 
-fun View.hide() {
-    visibility = View.GONE
-}
+fun View.hide() =
+        setVisibility(View.GONE)
 
-fun View.show() {
-    visibility = View.VISIBLE
-}
+
+fun View.show() =
+        setVisibility(View.VISIBLE)
+
+infix fun View.click(f: () -> Unit) =
+        setOnClickListener { f() }
 
 fun View.toggleVisivility() =
         when (visibility) {
@@ -42,4 +50,5 @@ fun View.toggleVisivility() =
             else -> visibility = View.VISIBLE
         }
 
-infix fun ViewGroup.inflate(res: Int) = LayoutInflater.from(context).inflate(res, this, false)
+infix fun ViewGroup.inflate(res: Int) =
+        LayoutInflater.from(context).inflate(res, this, false)
