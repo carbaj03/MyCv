@@ -1,7 +1,8 @@
-
 package com.acv.mycv.ui.skills.detail
 
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.StaggeredGridLayoutManager
+import android.view.View
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
 import com.acv.mycv.ui.skills.Skill
@@ -25,21 +26,30 @@ class SkillDetailFragment : BaseFragment() {
         }
 
         with(rvSkills) {
-            layoutManager = linearLayoutManager()
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//            layoutManager = linearLayoutManager()
             addItemDecoration(DividerDecorationK(context.color(R.color.primary), 1f))
-            adapter = SkillAdapter(getItems(), ::SkillViewHolder) { listener(it) }
+            adapter = Adapter(getItems(), { x, y ->
+                getHolder(x, y, { a, b ->
+                    when (b) {
+                        is NormalItem -> NormalViewHolder(a,b)
+                        is ShortItem -> ShortViewHolder(a)
+                        is LargeItem -> LargeViewHolder(a)
+                    }
+                })
+            }) { listener(it) }
         }
     }
 
-    fun listener(it: Skill) =
+    fun <A : View, M : ItemVisitable, VH : ViewHolder<M>> getHolder(v: A, type: M, f: (A, M) -> VH): VH =
+            f(v, type)
+
+    fun listener(it: Kotlin) =
             coordinator.snackBar(it.name)
 
     fun getItems() = listOf(
-            Skill(R.drawable.kotlin, "Kotlin"),
-            Skill(R.drawable.mo2o,"Librerias"),
-            Skill(R.drawable.solid, "Solid"),
-            Skill(R.drawable.clean,"Clean Architecture"),
-            Skill(R.drawable.git, "Git / GitFlow"),
-            Skill(R.drawable.test, "Test")
+            NormalItem("Kotlin"),
+            LargeItem("Librerias"),
+            ShortItem("Solid")
     )
 }

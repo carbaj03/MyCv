@@ -1,8 +1,10 @@
 package com.acv.mycv.ui.skills
 
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.StaggeredGridLayoutManager
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
+import com.acv.mycv.ui.skills.detail.SkillDetailFragment
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 import kotlinx.android.synthetic.main.fragment_skills.*
 
@@ -22,14 +24,15 @@ class SkillsFragment : BaseFragment() {
         }
 
         with(rvSkills) {
-            layoutManager = linearLayoutManager()
+//            layoutManager = linearLayoutManager()
+            layoutManager= StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             addItemDecoration(DividerDecorationK(context.color(R.color.primary), 1f))
             adapter = SkillAdapter(getItems(), ::SkillViewHolder) { listener(it) }
         }
     }
 
     fun listener(it: Skill) =
-            coordinator.snackBar(it.name)
+            loada<SkillDetailFragment>()
 
     fun getItems() = listOf(
             Skill(R.drawable.kotlin, "Kotlin"),

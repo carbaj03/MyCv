@@ -15,6 +15,14 @@ inline fun <reified T : Fragment> AppCompatActivity.load(vararg args: Pair<Strin
                     .commit()
         }
 
+inline fun <reified T : Fragment> Fragment.loada(vararg args: Pair<String, String>) =
+        with((context as AppCompatActivity).supportFragmentManager) {
+            beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                    .replace(R.id.container, createFragment<T>(*args), T::class.java.simpleName)
+                    .commit()
+        }
+
 inline fun <reified T : Fragment> createFragment(vararg args: Pair<String, String>): T =
         with(T::class.java.newInstance()) {
             val bundle = Bundle()
