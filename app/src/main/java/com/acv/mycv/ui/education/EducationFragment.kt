@@ -32,7 +32,7 @@ class EducationFragment : BaseFragment() {
     fun listener(it: Degree) =
             coordinator.snackBar(it.name)
 
-    fun getItems() = listOf(
+    fun getItems() = mutableListOf(
             Degree(
                     "Desarrollo de Aplicaciones Informáticas",
                     "F.P Grado Superior ",

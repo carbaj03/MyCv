@@ -2,9 +2,11 @@ package com.acv.mycv.ui.skills
 
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.ItemVisitable
+import java.util.*
 
 
 data class Skill (
+        val id: String,
         val icon: Int = R.drawable.ic_github,
         val name: String
 ) : ItemVisitable {

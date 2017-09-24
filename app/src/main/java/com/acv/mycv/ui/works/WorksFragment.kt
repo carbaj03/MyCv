@@ -30,7 +30,7 @@ class WorksFragment : BaseFragment() {
     fun listener(it: Work) =
             coordinator.snackBar(it.name)
 
-    fun getItems() = listOf(
+    fun getItems() = mutableListOf(
             Work(
                     "Android Developer"
                     , "Mo2o Madrid, Spain"

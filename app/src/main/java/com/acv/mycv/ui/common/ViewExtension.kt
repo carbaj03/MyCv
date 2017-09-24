@@ -1,10 +1,7 @@
 package com.acv.mycv.ui.common
 
 import android.support.design.widget.Snackbar
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
@@ -52,3 +49,5 @@ fun View.toggleVisivility() =
 
 infix fun ViewGroup.inflate(res: Int) =
         LayoutInflater.from(context).inflate(res, this, false)
+
+fun MenuInflater.make(menuRes: Int, menu: Menu) = Action { inflate(menuRes, menu) }

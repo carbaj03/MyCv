@@ -12,3 +12,4 @@ const val OTHERS = R.id.navigation_others
 
 const val URL = "URL"
 const val TITLE = "TITLE"
+const val SKILL = "SKILL"
