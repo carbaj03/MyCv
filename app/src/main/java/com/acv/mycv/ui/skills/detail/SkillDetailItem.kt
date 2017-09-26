@@ -29,3 +29,11 @@ class ShortItem (
 ) : SkillDetailItem(title,description) {
     override fun type() = R.layout.item_short
 }
+
+class SolidItem(
+        title: String,
+        description: String,
+        color: Int
+) : SkillDetailItem(title,description) {
+    override fun type() = R.layout.item_auto
+}

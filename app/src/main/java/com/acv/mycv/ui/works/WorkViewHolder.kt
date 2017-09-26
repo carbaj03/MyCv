@@ -17,7 +17,7 @@ class WorkViewHolder(view: View) : ViewHolder<Work>(view) {
     val tvMoreInfo: TextView = view.findViewById(R.id.tvMoreInfo)
 
     override fun bind(degree: Work) = with(degree) {
-        tvIcon.loadCircle(degree.logo)
+        tvIcon.loadCircle(logo)
         tvName.text = name
         tvDescription.text = description
         tvDate.text = date

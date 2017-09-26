@@ -3,6 +3,7 @@ package com.acv.mycv.ui.skills.detail
 import android.support.v7.widget.StaggeredGridLayoutManager
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
+import kotlinx.android.synthetic.main.collapsing_toolbar.*
 import kotlinx.android.synthetic.main.fragment_skills.*
 
 
@@ -18,7 +19,9 @@ class SkillDetailFragment : BaseFragment() {
     override fun onCreate() {
         configToolbar(getExtra(TITLE))
         observe { model.getSkillDetail(getExtra(SKILL)) } `do` { myAdapter.add(it) }
+        observe { model.getSkill(getExtra(SKILL)) } `do` { ivBackdrop.setImageResource(it.icon) }
         setupRecycler()
+
     }
 
     private fun setupRecycler() =

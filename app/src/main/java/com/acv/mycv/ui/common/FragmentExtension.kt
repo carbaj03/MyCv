@@ -78,10 +78,10 @@ fun Fragment.title(newTitle: String) =
 typealias Obs<T> = ((T) -> Unit)
 typealias Obs2<T> = (Obs<T>) -> Unit
 
-infix fun <M, T : List<M>> Fragment.observe(f: () -> LiveData<T>): Obs2<T> =
+infix fun <M, T : M> Fragment.observe(f: () -> LiveData<T>): Obs2<T> =
         { o: (T) -> Unit -> f().observe(activity, Observer { o(it!!) }) }
 
-infix fun <T> Obs2<T>.`do`(f: Obs<T>): Unit =
+infix fun <T> Obs2<T>.`do`(f: Obs<T>) =
         this({ f(it) })
 
 inline fun <reified T : ViewModel> Fragment.viewModelProviders(): T =

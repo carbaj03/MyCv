@@ -11,8 +11,9 @@ class SkillViewHolder(view: View) : ViewHolder<Skill>(view) {
     var ivIcon: ImageView = view.findViewById(R.id.ivIcon)
     var tvName: TextView = view.findViewById(R.id.tvName)
 
-    override fun bind(skill: Skill) = with(skill) {
-        ivIcon.loadCircle(skill.icon)
-        tvName.text = name
-    }
+    override fun bind(model: Skill) =
+            with(model) {
+                ivIcon.loadCircle(icon)
+                tvName.text = name
+            }
 }

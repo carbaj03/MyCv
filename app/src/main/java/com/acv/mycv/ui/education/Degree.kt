@@ -5,7 +5,7 @@ import com.acv.mycv.ui.common.ItemVisitable
 
 data class Degree(
         val name: String,
-        val degree: String,
+        val title: String,
         val description: String,
         val date: String,
         val moreInfo: String

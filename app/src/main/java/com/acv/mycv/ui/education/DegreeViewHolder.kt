@@ -17,7 +17,7 @@ class DegreeViewHolder(view: View) : ViewHolder<Degree>(view) {
 
     override fun bind(degree: Degree) = with(degree) {
         tvName.text = name
-        tvDegree.text = degree.degree
+        tvDegree.text = title
         tvDescription.text = description
         tvDate.text = date
         tvMoreInfo.text = moreInfo

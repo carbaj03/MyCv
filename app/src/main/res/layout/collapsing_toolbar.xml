@@ -21,6 +21,7 @@
         app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
         <ImageView
+            android:transitionName="profile"
             android:id="@+id/ivBackdrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
