@@ -1,6 +1,8 @@
 package com.acv.mycv.ui.skills.detail
 
 import android.content.res.ColorStateList
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.CardView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -31,10 +33,12 @@ class SkillDetailViewHolder(val view: View) : ViewHolder<SkillDetailItem>(view) 
         is SolidItem -> {
             val tvName: TextView = view.findViewById(R.id.tvName)
             val tvDescription: TextView = view.findViewById(R.id.tvDescription)
-            val container: View = view.findViewById(R.id.itemContainer)
+            val container: CardView = view.findViewById(R.id.cardContainer)
             tvName.text = model.name
             tvDescription.text = model.description
-//            container.backgroundTintList = ColorStateList(R.color.accent)
+            container.cardBackgroundColor = ColorStateList(
+                    arrayOf(intArrayOf(android.R.attr.state_enabled)),
+                    intArrayOf(ContextCompat.getColor(tvName.context, model.color)))
         }
 
     }

@@ -33,7 +33,7 @@ class ShortItem (
 class SolidItem(
         title: String,
         description: String,
-        color: Int
+        val color: Int
 ) : SkillDetailItem(title,description) {
     override fun type() = R.layout.item_auto
 }

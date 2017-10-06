@@ -69,11 +69,11 @@ class SkillCache {
 
                 else -> listOf(
                         SolidItem("Otros",
-                                "Permite representar jerarquías restringidas en las que un objeto sólo puede ser de un tipo de las dadas."),
+                                "Permite representar jerarquías restringidas en las que un objeto sólo puede ser de un tipo de las dadas.", R.color.primary),
                         SolidItem("Lambdas",
-                                "Una función anónima (función literal, expresión lambda) es una subrutina definida que no está enlazada a un identificador."),
-                        SolidItem("Delegation", ""),
-                        SolidItem("Extensions", "")
+                                "Una función anónima (función literal, expresión lambda) es una subrutina definida que no está enlazada a un identificador.", R.color.primary_dark),
+                        SolidItem("Delegation", "", R.color.accent),
+                        SolidItem("Extensions", "", R.color.accent)
                 )
             }
 

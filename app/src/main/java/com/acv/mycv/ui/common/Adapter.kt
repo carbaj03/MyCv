@@ -5,11 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.acv.mycv.ui.education.Degree
 import com.acv.mycv.ui.education.DegreeViewHolder
+import com.acv.mycv.ui.others.interest.Interest
+import com.acv.mycv.ui.others.interest.InterestViewHolder
+import com.acv.mycv.ui.others.referent.Referent
+import com.acv.mycv.ui.others.referent.ReferentViewHolder
 import com.acv.mycv.ui.skills.Skill
 import com.acv.mycv.ui.skills.SkillViewHolder
 import com.acv.mycv.ui.works.Work
 import com.acv.mycv.ui.works.WorkViewHolder
 
+typealias InterestAdapter = Adapter<InterestViewHolder, Interest>
+typealias ReferentAdapter = Adapter<ReferentViewHolder, Referent>
 typealias SkillAdapter = Adapter<SkillViewHolder, Skill>
 typealias WorkAdapter = Adapter<WorkViewHolder, Work>
 typealias EducationAdapter = Adapter<DegreeViewHolder, Degree>

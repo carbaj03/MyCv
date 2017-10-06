@@ -2,15 +2,19 @@ package com.acv.mycv.ui.common
 
 import android.support.design.widget.Snackbar
 import android.view.*
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions.bitmapTransform
+import com.bumptech.glide.request.RequestOptions.centerCropTransform
 
+fun ImageView.load(toLoad: Any) =
+        Glide.with(context)
+                .load(toLoad)
+                .apply(centerCropTransform())
+                .into(this)
 
 fun ImageView.loadCircle(toLoad: Any) =
         Glide.with(context)

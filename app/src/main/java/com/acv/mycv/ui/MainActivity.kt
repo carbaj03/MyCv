@@ -6,6 +6,7 @@ import android.view.KeyEvent
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
 import com.acv.mycv.ui.education.EducationFragment
+import com.acv.mycv.ui.others.OtherFragment
 import com.acv.mycv.ui.profile.ProfileFragment
 import com.acv.mycv.ui.skills.SkillsFragment
 import com.acv.mycv.ui.works.WorksFragment
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                     SKILLS -> Action { load<SkillsFragment>() }
                     WORKS -> Action { load<WorksFragment>() }
                     EDUCATION -> Action { load<EducationFragment>() }
-                    OTHERS -> Action { }
+                    OTHERS -> Action { load<OtherFragment>() }
                 }
             }
         }

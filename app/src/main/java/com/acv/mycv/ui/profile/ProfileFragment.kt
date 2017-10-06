@@ -3,6 +3,7 @@ package com.acv.mycv.ui.profile
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.view.View
 import android.widget.Toast
 import com.acv.mycv.R
 import com.acv.mycv.ui.common.*
@@ -53,5 +54,4 @@ class ProfileFragment : BaseFragment() {
                     Toast.makeText(activity, "There is no email client installed.", Toast.LENGTH_SHORT).show()
                 }
             }
-
 }

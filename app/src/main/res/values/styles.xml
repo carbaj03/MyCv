@@ -7,7 +7,8 @@
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
 
-        <item name="android:fontFamily">@font/lobster_two</item>
+        <item name="android:fontFamily">@font/georgia</item>
+        <item name="android:colorBackground">@color/backgorund</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -38,9 +39,10 @@
         <item name="android:textColor">@color/primary_text</item>
     </style>
 
-    <style name="Item.Caption" parent="@style/TextAppearance.AppCompat.Caption"></style>
+    <style name="Item.Caption" parent="@style/TextAppearance.AppCompat.Caption" />
 
+    <style name="Item.SubHead" parent="@style/TextAppearance.AppCompat.Subhead" />
 
-    <style name="Item.Body1" parent="@style/TextAppearance.AppCompat.Body1"></style>
+    <style name="Item.Body1" parent="@style/TextAppearance.AppCompat.Body1" />
 
 </resources>
